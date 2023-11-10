@@ -8,12 +8,20 @@ interface Todo {
   completed: boolean;
 }
 
-const array = ["hello", "there!"];
+const array = ["hello", "there!", 21, [true, 21, "hello"]];
 console.log(array.join(" "));
 
-const obj: { name: string; age: number } = {
+const obj: {
+  name: string;
+  age: number;
+  coords: { lat: number; long: number };
+} = {
   name: "kaustubh",
   age: 21,
+  coords: {
+    lat: 21,
+    long: 32,
+  },
 };
 console.log(obj);
 
