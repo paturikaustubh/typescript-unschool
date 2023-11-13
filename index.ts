@@ -7,9 +7,20 @@ interface Todo {
   title: string;
   completed: boolean;
 }
-
-const array = ["hello", "there!", 21, [true, 21, "hello"]];
+// ==================================================||  ARRAYS  ||============================================= \\
+const array: (
+  | { Tata: string[] }
+  | { Mahindra: string[] }
+  | { Honda: (string | number)[] }
+)[] = [
+  { Tata: ["Zest", "Safari", "Nexon"] },
+  { Mahindra: ["XUV"] },
+  { Honda: ["City", 69] },
+];
 console.log(array.join(" "));
+
+// const arrayOfArrays: string[][] = [["Hello"]];
+const arrayOfArrays: (string[] | string)[] = [["Hello"], "there"];
 
 const obj: {
   name: string;
