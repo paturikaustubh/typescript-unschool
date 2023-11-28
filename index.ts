@@ -20,7 +20,13 @@ const array: (
 console.log(array.join(" "));
 
 // const arrayOfArrays: string[][] = [["Hello"]];
-const arrayOfArrays: (string[] | string)[] = [["Hello"], "there"];
+const arrayOfArrays: (string | number)[] = ["Hello", 0];
+const value = arrayOfArrays[0];
+
+// ==================================================||  TUPLES  ||============================================= \\
+type CarSpecs = [string, number, boolean];
+// const carSpecs: [string, number, boolean] = ["Polo", 69, true]
+const carSpecs: CarSpecs = ["Polo", 69, true];
 
 const obj: {
   name: string;
@@ -35,9 +41,6 @@ const obj: {
   },
 };
 console.log(obj);
-
-const date = dayjs();
-console.log(date);
 
 const url = "https://jsonplaceholder.typicode.com/todos/1";
 
@@ -87,3 +90,31 @@ let colors: (string | boolean)[] = ["red", "green", "blue"];
 let found: boolean;
 found = false;
 console.log(found, "found");
+
+// ==================================================||  OBJECTS  ||============================================= \\
+interface Car {
+  company: string;
+  model: string;
+  mfgYear: number;
+  isManual: boolean;
+  printDetails(): string;
+}
+
+const toyotaSupra: Car = {
+  company: "Toyota",
+  model: "Supra",
+  mfgYear: 1978,
+  isManual: true,
+  printDetails() {
+    return `This ${this?.model ?? "GAY"} from ${
+      this?.company ?? "GAY"
+    }, was first manufactured on ${this?.mfgYear ?? "GAY"}.`;
+  },
+};
+
+const logDetails = (item: Car): string => {
+  console.log(item.printDetails());
+  return "DONE";
+};
+
+logDetails(toyotaSupra);
